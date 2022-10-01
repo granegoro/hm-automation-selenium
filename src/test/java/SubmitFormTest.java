@@ -120,7 +120,7 @@ class SubmitFormTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
         driver.findElement(By.className("button")).click();
 
-        String expected = "Я сглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
+        String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
         String actual = driver.findElement(By.className("input_invalid")).getText();
         Assertions.assertEquals(expected, actual);
     }
