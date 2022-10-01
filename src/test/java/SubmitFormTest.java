@@ -10,7 +10,7 @@ import java.util.List;
 
 
 class SubmitFormTest {
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeAll
     static void setupAll() {
@@ -20,21 +20,26 @@ class SubmitFormTest {
     @BeforeEach
     void setup() {
         driver = new ChromeDriver();
-    }
-
-    @AfterEach
-    void teardown() {
-        driver.quit();
-    }
-
-    @Test
-    void ShouldFillAndSendSuccessfully() {
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+    }
+    @AfterEach
+    void teardown() {
+        driver.quit();
+        driver = null;
+    }
+
+    @Test
+    void ShouldFillAndSendSuccessfully() {
+
+       /* ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);*/
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петр Петров");
