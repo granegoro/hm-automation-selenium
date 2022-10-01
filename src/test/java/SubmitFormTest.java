@@ -47,7 +47,7 @@ class SubmitFormTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+    /*@Test
     void ShouldFillAndSendSuccessfullyWithDashInName() {
 
         ChromeOptions options = new ChromeOptions();
@@ -124,6 +124,6 @@ class SubmitFormTest {
         String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
         String actual = driver.findElement(By.className("input_invalid")).getText();
         Assertions.assertEquals(expected, actual);
-    }
+    }*/
 
 }
