@@ -37,12 +37,6 @@ class SubmitFormTest {
     @Test
     void ShouldFillAndSendSuccessfully() {
 
-       /* ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
-
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петр Петров");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
@@ -54,14 +48,8 @@ class SubmitFormTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    /*@Test
+    @Test
     void ShouldFillAndSendSuccessfullyWithDashInName() {
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Жан-Жак Петров");
@@ -77,12 +65,6 @@ class SubmitFormTest {
     @Test
     void ShouldNotPassWithIncorrectName() {
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Willy Dilly");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
@@ -96,12 +78,6 @@ class SubmitFormTest {
 
     @Test
     void ShouldNotPassWithIncorrectPhone() {
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петр Петров");
@@ -117,11 +93,6 @@ class SubmitFormTest {
     @Test
     void ShouldNotPassWithoutAgreement() {
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петр Петров");
@@ -131,6 +102,6 @@ class SubmitFormTest {
         String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
         String actual = driver.findElement(By.className("input_invalid")).getText();
         Assertions.assertEquals(expected, actual);
-    }*/
+    }
 
 }
