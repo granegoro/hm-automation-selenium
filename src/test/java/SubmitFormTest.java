@@ -1,8 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -33,6 +30,17 @@ class SubmitFormTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+
+        driver.get("http://localhost:9999/");
+        System.out.println();
+        //driver.findElement().sendKeys("Петр Петров");
+        //driver.findElement().sendKeys("+79999999999");
+        //driver.findElement().click();
+        //driver.findElement().click();
+
+       // String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+       // String actual = driver.findElement().getText();
+       // Assertions.assertEquals(expected, actual);
 
 
 
