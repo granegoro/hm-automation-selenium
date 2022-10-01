@@ -30,11 +30,11 @@ class SubmitFormTest {
     @Test
     void ShouldFillAndSendSuccessfully() {
 
-        /*ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
+        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петр Петров");
@@ -50,11 +50,11 @@ class SubmitFormTest {
     @Test
     void ShouldFillAndSendSuccessfullyWithDashInName() {
 
-       /* ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
+        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Жан-Жак Петров");
@@ -70,11 +70,11 @@ class SubmitFormTest {
     @Test
     void ShouldNotPassWithIncorrectName() {
 
-       /* ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
+        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Willy Dilly");
@@ -90,11 +90,11 @@ class SubmitFormTest {
     @Test
     void ShouldNotPassWithIncorrectPhone() {
 
-       /* ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
+        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Петр Петров");
